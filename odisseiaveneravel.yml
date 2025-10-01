@@ -1,0 +1,34 @@
+spring:
+  security:
+    user:
+      name: admin
+      password: "{cipher}5d60d027e5ff9f00976bb6e031e839362b418f661bf4860bce5250a201bf9b56"
+    oauth2:
+      resourceserver:
+        jwt:
+          public-key-location: classpath:public.pem
+      client:
+        registration:
+          google:
+            client-id: 599803814099-253v08gqf4emu919ib4hu9h6ar8bmjvk.apps.googleusercontent.com
+            client-secret: '{cipher}6f074e27177d6e983726887443718284cca466d23613ce89dd02c343b9475391a83cc1adde40ab0a0ffc55b3450018f191a40cd1cf9ab6f6b969f0982ca5b69f'
+            scope:
+              - profile
+              - email
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            user-name-attribute: sub
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: odisseiaveneravel@gmail.com
+    password: '{cipher}6d4494ba19a04c035480ab8632bbebc5be5d38c306ec6f1f58719a5c57d74894208abd84ad4768f17d983baaa04803fd'
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
